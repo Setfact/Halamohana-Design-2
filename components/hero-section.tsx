@@ -84,49 +84,119 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
+      {/* ── Social icons — left side ── */}
+      <div className="absolute left-6 top-1/2 z-20 hidden -translate-y-1/2 flex-col items-center gap-4 md:flex">
+        <span className="block h-12 w-[1px] bg-white/20" />
+        <a
+          href="#"
+          aria-label="LinkedIn"
+          className="text-white/50 transition-all duration-200 hover:text-[#B5B847] hover:scale-110"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-label="Instagram"
+          className="text-white/50 transition-all duration-200 hover:text-[#B5B847] hover:scale-110"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+        <span className="block h-12 w-[1px] bg-white/20" />
+      </div>
+
       {/* ── Centered text ── */}
-      <div
-        className={`relative z-10 flex h-full flex-col items-center justify-center px-6 text-center transition-all duration-1000 ${
-          loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
-      >
-        {/* Top label */}
-        <p className="font-sans text-[11px] font-medium tracking-[0.45em] uppercase text-[#B5B847] mb-5">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+        {/* Top label — fade up */}
+        <p
+          className="font-sans text-[11px] font-medium tracking-[0.45em] uppercase text-[#B5B847] mb-5"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(12px)",
+            transition: "opacity 0.7s ease 0.1s, transform 0.7s ease 0.1s",
+          }}
+        >
           Welcome to
         </p>
 
-        {/* Main headline */}
+        {/* Main headline — word by word reveal */}
         <h1 className="font-serif text-5xl font-semibold leading-tight text-white text-balance md:text-7xl lg:text-8xl">
-          Halla Mohana
+          {"Halla Mohana".split(" ").map((word, wi) => (
+            <span
+              key={wi}
+              className="inline-block mr-4 last:mr-0"
+              style={{
+                opacity: loaded ? 1 : 0,
+                transform: loaded ? "translateY(0)" : "translateY(24px)",
+                transition: `opacity 0.7s ease ${0.25 + wi * 0.18}s, transform 0.7s ease ${0.25 + wi * 0.18}s`,
+              }}
+            >
+              {word}
+            </span>
+          ))}
         </h1>
 
-        {/* Decorative rule */}
-        <div className="my-5 flex items-center gap-4">
+        {/* Decorative rule — fade */}
+        <div
+          className="my-5 flex items-center gap-4"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transition: "opacity 0.7s ease 0.65s",
+          }}
+        >
           <span className="block h-[1px] w-16 bg-white/30" />
           <span className="block h-1 w-1 rounded-full bg-[#B5B847]" />
           <span className="block h-[1px] w-16 bg-white/30" />
         </div>
 
-        {/* Subheadline */}
-        <p className="font-serif text-xl italic font-light text-white/80 tracking-wide md:text-2xl">
+        {/* Subheadline — fade up */}
+        <p
+          className="font-serif text-xl italic font-light text-white/80 tracking-wide md:text-2xl"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(10px)",
+            transition: "opacity 0.7s ease 0.75s, transform 0.7s ease 0.75s",
+          }}
+        >
           Hospitality Development
         </p>
 
-        {/* Description */}
-        <p className="mt-4 max-w-lg font-sans text-sm leading-relaxed text-white/60 text-pretty md:text-base">
+        {/* Description — fade up */}
+        <p
+          className="mt-4 max-w-lg font-sans text-sm leading-relaxed text-white/60 text-pretty md:text-base"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(10px)",
+            transition: "opacity 0.7s ease 0.88s, transform 0.7s ease 0.88s",
+          }}
+        >
           Building premium spaces for business travelers and urban lifestyle
         </p>
 
-        {/* CTA */}
+        {/* CTA — fade up */}
         <a
           href="#properties"
           className="mt-10 inline-block rounded-sm bg-[#1a1a14] px-10 py-3.5 font-sans text-sm font-medium tracking-[0.12em] uppercase text-white border border-white/20 transition-all duration-300 hover:bg-[#7A8C3C] hover:border-[#7A8C3C] hover:shadow-[0_0_30px_rgba(122,140,60,0.35)] active:scale-95"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transform: loaded ? "translateY(0)" : "translateY(10px)",
+            transition: "opacity 0.7s ease 1.0s, transform 0.7s ease 1.0s",
+          }}
         >
           Explore Properties
         </a>
 
         {/* Slide location label */}
-        <p className="mt-8 font-sans text-[10px] tracking-[0.35em] uppercase text-white/40">
+        <p
+          className="mt-8 font-sans text-[10px] tracking-[0.35em] uppercase text-white/40"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transition: "opacity 0.7s ease 1.1s",
+          }}
+        >
           {slides[current].label}
         </p>
       </div>
@@ -195,12 +265,20 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* ── Scroll indicator ── */}
-      <div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1.5">
+      {/* ── Scroll indicator — bouncing arrow ── */}
+      <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2">
         <span className="font-sans text-[9px] tracking-[0.4em] uppercase text-white/40">
           Scroll
         </span>
-        <span className="block h-6 w-[1px] animate-pulse bg-gradient-to-b from-white/40 to-transparent" />
+        <a
+          href="#stats"
+          aria-label="Scroll down"
+          className="flex h-9 w-9 animate-bounce items-center justify-center rounded-full border border-white/30 text-white/50 transition-colors duration-200 hover:border-[#B5B847] hover:text-[#B5B847]"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6"/>
+          </svg>
+        </a>
       </div>
     </section>
   )

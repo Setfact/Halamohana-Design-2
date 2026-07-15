@@ -96,11 +96,25 @@ export default function StatsSection() {
 
   return (
     <section
+      id="stats"
       ref={ref}
       aria-label="Company achievements"
-      className="w-full bg-[#F8F9F4] py-20"
+      className="relative w-full overflow-hidden bg-[#F8F9F4] py-20"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      {/* Subtle dot-grid pattern */}
+      <svg
+        className="pointer-events-none absolute inset-0 h-full w-full opacity-[0.35]"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern id="dot-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+            <circle cx="1.5" cy="1.5" r="1.5" fill="#7A8C3C" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dot-grid)" />
+      </svg>
+      <div className="relative mx-auto max-w-6xl px-6">
         {/* Section header */}
         <div
           className="mb-14 flex flex-col items-center gap-3 text-center transition-all duration-700"

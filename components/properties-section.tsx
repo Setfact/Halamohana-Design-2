@@ -62,83 +62,59 @@ function PropertyCard({
 }) {
   return (
     <article
-      className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+      className="group relative overflow-hidden rounded-xl"
       style={{
+        aspectRatio: "4/3",
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 0.5s ease ${index * 80}ms, transform 0.5s ease ${index * 80}ms, box-shadow 0.3s ease, translate 0.3s ease`,
+        transition: `opacity 0.6s ease ${index * 120}ms, transform 0.6s ease ${index * 120}ms`,
       }}
     >
-      {/* Image */}
-      <div className="relative aspect-video w-full overflow-hidden bg-[#e8ead8]">
-        <img
-          src={property.image}
-          alt={property.imageAlt}
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
-        {/* Type badge */}
-        <span
-          className={`absolute left-3 top-3 rounded-sm px-2.5 py-1 font-sans text-[10px] font-semibold uppercase tracking-widest ${badgeColor[property.type]}`}
-        >
-          {property.type.slice(0, -1)}
-        </span>
-      </div>
+      {/* Background image with zoom on hover */}
+      <img
+        src={property.image}
+        alt={property.imageAlt}
+        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        loading="lazy"
+      />
 
-      {/* Card body */}
-      <div className="flex flex-1 flex-col gap-2 p-5">
-        <h3 className="font-serif text-lg font-semibold leading-snug text-[#2A2E1F]">
+      {/* Base gradient overlay — always visible */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+      {/* Darker overlay on hover */}
+      <div className="absolute inset-0 bg-black/30 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+      {/* Type badge */}
+      <span
+        className={`absolute left-4 top-4 z-10 rounded-sm px-2.5 py-1 font-sans text-[10px] font-semibold uppercase tracking-widest ${badgeColor[property.type]}`}
+      >
+        {property.type.slice(0, -1)}
+      </span>
+
+      {/* Bottom content */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 flex flex-col gap-1.5 p-6">
+        <h3 className="font-serif text-2xl font-semibold leading-snug text-white">
           {property.name}
         </h3>
 
-        {/* Location */}
         <div className="flex items-center gap-1.5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="13"
-            height="13"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="shrink-0 text-[#7A8C3C]"
-            aria-hidden="true"
-          >
-            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-            <circle cx="12" cy="10" r="3" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-[#B5B847]" aria-hidden="true">
+            <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
           </svg>
-          <span className="font-sans text-sm text-[#5A6040]">{property.location}</span>
+          <span className="font-sans text-sm text-white/75">{property.location}</span>
         </div>
 
-        <p className="font-sans text-sm leading-relaxed text-[#8a8e72]">
-          {property.description}
-        </p>
-
-        {/* View Details link */}
-        <div className="mt-auto pt-4">
-          <a
-            href="#properties"
-            className="inline-flex items-center gap-1.5 font-sans text-sm font-medium text-[#7A8C3C] transition-colors duration-200 hover:text-[#B5B847]"
-          >
-            View Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+        {/* View Details — slides up on hover */}
+        <a
+          href="/properties"
+          className="mt-3 inline-flex w-fit items-center gap-1.5 rounded-sm border border-white/50 px-5 py-2 font-sans text-xs font-medium tracking-wide text-white opacity-0 transition-all duration-400 group-hover:opacity-100 group-hover:border-[#B5B847] group-hover:text-[#B5B847] translate-y-3 group-hover:translate-y-0"
+        >
+          View Details
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
     </article>
   )
