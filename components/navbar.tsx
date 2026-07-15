@@ -8,7 +8,7 @@ const navHrefs: Record<string, string> = {
   Home: "/",
   About: "/about",
   Properties: "/properties",
-  Gallery: "/#gallery",
+  Gallery: "/gallery",
   News: "/#news",
   Career: "/#career",
 }
