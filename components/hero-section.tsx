@@ -4,9 +4,8 @@ import { useState, useEffect, useRef } from "react"
 
 const slides = [
   {
-    // Pexels free-use luxury hotel lobby / atrium
-    videoSrc: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_25fps.mp4",
-    poster: "https://images.pexels.com/videos/3571264/pictures/preview-0.jpg",
+    videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7820473-hd_1920_1080_25fps-uMJkTDi3VwM3xWq9J5ZxrKWqARxToP.mp4",
+    poster: "",
     label: "Kuala Lumpur",
   },
   {
