@@ -117,12 +117,7 @@ export default function HeroSection() {
         className="absolute inset-0 flex flex-col items-center justify-center px-24 text-center"
         style={{ zIndex: 5 }}
       >
-        {/* Glassmorphism backdrop */}
-        <div
-          className="flex flex-col items-center gap-0 rounded-2xl px-8 py-10"
-          style={{ background: "rgba(0,0,0,0.3)" }}
-        >
-          {/* Top label */}
+        {/* Top label */}
           <p
             className="font-sans text-[11px] font-medium tracking-[0.45em] uppercase text-[#B5B847] mb-5"
             style={{
@@ -206,7 +201,6 @@ export default function HeroSection() {
           >
             Explore Properties
           </a>
-        </div>
       </div>
 
       {/* ── Slide label — bottom-left, z5 ── */}
