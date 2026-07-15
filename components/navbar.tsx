@@ -48,21 +48,20 @@ export default function Navbar() {
             className="flex items-center gap-3 group"
             aria-label="Halla Mohana — Home"
           >
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
-              alt="Halla Mohana logo"
-              height={40}
-              width={40}
-              className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
-              style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.25))" }}
-            />
-            <span
-              className={`font-sans text-[10px] tracking-[0.25em] uppercase transition-colors duration-300 ${
-                scrolled ? "text-[#7A8C3C]" : "text-white/70"
-              }`}
+            <div
+              className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:scale-105"
+              style={{
+                border: "2px solid rgba(122,140,60,0.3)",
+                boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
+                padding: "6px",
+              }}
             >
-              Hospitality Development
-            </span>
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
+                alt="Halla Mohana logo"
+                className="h-full w-full object-contain"
+              />
+            </div>
           </a>
 
           {/* Desktop nav */}
