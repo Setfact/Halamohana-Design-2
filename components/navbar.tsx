@@ -44,17 +44,18 @@ export default function Navbar() {
         >
           {/* Logo */}
           <a
-            href="#"
-            className="flex flex-col leading-none group"
+            href="/"
+            className="flex items-center gap-3 group"
             aria-label="Halla Mohana — Home"
           >
-            <span
-              className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 ${
-                scrolled ? "text-[#3a3a2e]" : "text-white"
-              } group-hover:text-[#7A8C3C]`}
-            >
-              Halla Mohana
-            </span>
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
+              alt="Halla Mohana logo"
+              height={40}
+              width={40}
+              className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
+              style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.25))" }}
+            />
             <span
               className={`font-sans text-[10px] tracking-[0.25em] uppercase transition-colors duration-300 ${
                 scrolled ? "text-[#7A8C3C]" : "text-white/70"

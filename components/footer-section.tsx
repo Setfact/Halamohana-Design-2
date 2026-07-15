@@ -139,6 +139,12 @@ export default function FooterSection() {
         >
           <div className="mb-12 flex flex-col gap-3 border-b border-white/10 pb-10 md:flex-row md:items-start md:justify-between">
             <div className="max-w-sm">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
+                alt="Halla Mohana logo"
+                className="mb-4 h-16 w-16 object-contain transition-transform duration-300 hover:scale-105"
+                style={{ filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.5))" }}
+              />
               <p className="font-sans text-xs tracking-[0.35em] uppercase text-[#7A8C3C] mb-1">
                 Hospitality Development
               </p>
@@ -149,7 +155,7 @@ export default function FooterSection() {
                 Building premium spaces for business travelers and urban lifestyle across Indonesia.
               </p>
               <p className="mt-2 font-sans text-xs text-white/40 italic">
-                A subsidiary of TMT Group, managed by Mahadasha Group
+                A subsidiary of TMT Group
               </p>
             </div>
 

@@ -87,6 +87,19 @@ export default function HeroSection() {
         className="absolute inset-0 flex flex-col items-center justify-center px-24 text-center"
         style={{ zIndex: 5 }}
       >
+        {/* Logo */}
+          <img
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
+            alt="Halla Mohana logo"
+            className="mb-6 h-20 w-20 object-contain transition-transform duration-300 hover:scale-105"
+            style={{
+              filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.4))",
+              opacity: loaded ? 1 : 0,
+              transform: loaded ? "translateY(0) scale(1)" : "translateY(-10px) scale(0.95)",
+              transition: "opacity 0.7s ease 0s, transform 0.7s ease 0s",
+            }}
+          />
+
         {/* Top label */}
           <p
             className="font-sans text-[11px] font-medium tracking-[0.45em] uppercase text-[#B5B847] mb-5"
