@@ -72,7 +72,7 @@ export default function HeroSection() {
       ))}
 
       {/* ── Dark overlay — z1 ── */}
-      <div className="absolute inset-0 bg-black/50" style={{ zIndex: 1 }} aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/30" style={{ zIndex: 1 }} aria-hidden="true" />
 
       {/* ── Vignette — z1 ── */}
       <div
@@ -120,7 +120,7 @@ export default function HeroSection() {
         {/* Glassmorphism backdrop */}
         <div
           className="flex flex-col items-center gap-0 rounded-2xl px-8 py-10"
-          style={{ background: "rgba(0,0,0,0.3)", backdropFilter: "blur(4px)" }}
+          style={{ background: "rgba(0,0,0,0.3)" }}
         >
           {/* Top label */}
           <p
@@ -216,7 +216,6 @@ export default function HeroSection() {
           bottom: "80px",
           zIndex: 5,
           background: "rgba(0,0,0,0.4)",
-          backdropFilter: "blur(10px)",
           padding: "8px 16px",
           borderRadius: "4px",
           borderLeft: "3px solid #7A8C3C",
@@ -246,7 +245,6 @@ export default function HeroSection() {
           height: "48px",
           borderRadius: "50%",
           background: "rgba(255,255,255,0.2)",
-          backdropFilter: "blur(10px)",
           border: "1px solid rgba(255,255,255,0.3)",
           color: "white",
         }}
@@ -270,7 +268,6 @@ export default function HeroSection() {
           height: "48px",
           borderRadius: "50%",
           background: "rgba(255,255,255,0.2)",
-          backdropFilter: "blur(10px)",
           border: "1px solid rgba(255,255,255,0.3)",
           color: "white",
         }}
@@ -286,8 +283,7 @@ export default function HeroSection() {
         style={{
           bottom: "30px",
           zIndex: 10,
-          background: "rgba(0,0,0,0.5)",
-          backdropFilter: "blur(10px)",
+          background: "rgba(0,0,0,0.4)",
           padding: "8px 16px",
           borderRadius: "20px",
         }}
