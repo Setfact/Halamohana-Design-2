@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react"
 
 const slides = [
   {
-    videoSrc: "https://videos.pexels.com/video-files/16944640/16944640-hd_1920_1080_30fps.mp4",
-    poster: "https://images.pexels.com/videos/16944640/pictures/preview-0.jpg",
+    videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/7820473-hd_1920_1080_25fps-uMJkTDi3VwM3xWq9J5ZxrKWqARxToP.mp4",
+    poster: "",
     label: "Kuala Lumpur",
   },
   {
