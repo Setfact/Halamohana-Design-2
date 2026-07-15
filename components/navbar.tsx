@@ -9,7 +9,7 @@ const navHrefs: Record<string, string> = {
   About: "/about",
   Properties: "/properties",
   Gallery: "/gallery",
-  News: "/#news",
+  News: "/news",
   Career: "/#career",
 }
 
