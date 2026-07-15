@@ -202,80 +202,107 @@ export default function HeroSection() {
       </div>
 
       {/* ── Left arrow ── */}
-      <button
-        onClick={prev}
-        aria-label="Previous slide"
-        className="absolute left-5 top-1/2 z-20 hidden -translate-y-1/2 h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/25 hover:border-white/70 md:flex"
+      <div
+        className="absolute left-5 top-1/2 z-20 hidden -translate-y-1/2 items-center justify-center rounded-full p-2 md:flex"
+        style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)" }}
       >
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
+        <button
+          onClick={prev}
+          aria-label="Previous slide"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#2A2E1F] transition-all duration-300 hover:scale-110 active:scale-95"
+          style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
         >
-          <polyline points="11 4 6 9 11 14" />
-        </svg>
-      </button>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="10 3 5 8 10 13" />
+          </svg>
+        </button>
+      </div>
 
       {/* ── Right arrow ── */}
-      <button
-        onClick={next}
-        aria-label="Next slide"
-        className="absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur-sm transition-all duration-200 hover:bg-white/25 hover:border-white/70 md:flex"
-      >
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.4"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          aria-hidden="true"
-        >
-          <polyline points="7 4 12 9 7 14" />
-        </svg>
-      </button>
-
-      {/* ── Dot indicators ── */}
       <div
-        className="absolute bottom-16 left-1/2 z-20 flex -translate-x-1/2 gap-2"
+        className="absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 items-center justify-center rounded-full p-2 md:flex"
+        style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)" }}
+      >
+        <button
+          onClick={next}
+          aria-label="Next slide"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#2A2E1F] transition-all duration-300 hover:scale-110 active:scale-95"
+          style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="6 3 11 8 6 13" />
+          </svg>
+        </button>
+      </div>
+
+      {/* ── Slide track indicators — right side ── */}
+      <div
+        className="absolute right-6 top-1/2 z-20 hidden -translate-y-1/2 flex-col items-center gap-2 md:flex"
         role="tablist"
         aria-label="Slide indicators"
       >
-        {slides.map((_, i) => (
+        {slides.map((slide, i) => (
           <button
             key={i}
             role="tab"
             aria-selected={i === current}
-            aria-label={`Go to slide ${i + 1}`}
+            aria-label={`Go to slide ${i + 1}: ${slide.label}`}
             onClick={() => setCurrent(i)}
-            className={`h-[3px] rounded-full transition-all duration-400 ${
-              i === current
-                ? "w-8 bg-[#B5B847]"
-                : "w-3 bg-white/30 hover:bg-white/60"
-            }`}
-          />
+            className="group relative flex items-center gap-2 transition-all duration-300"
+          >
+            {/* Track line */}
+            <span
+              className="block w-[2px] rounded-full transition-all duration-300"
+              style={{
+                height: i === current ? "40px" : "24px",
+                background: i === current ? "#7A8C3C" : "rgba(255,255,255,0.5)",
+              }}
+            />
+            {/* Label — shown on active */}
+            <span
+              className="font-sans text-[9px] tracking-[0.25em] uppercase transition-all duration-300"
+              style={{
+                color: i === current ? "#B5B847" : "rgba(255,255,255,0.4)",
+                opacity: i === current ? 1 : 0,
+                transform: i === current ? "translateX(0)" : "translateX(-4px)",
+              }}
+            >
+              {slide.label}
+            </span>
+          </button>
         ))}
       </div>
 
-      {/* ── Scroll indicator — bouncing arrow ── */}
-      <div className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2">
-        <span className="font-sans text-[9px] tracking-[0.4em] uppercase text-white/40">
+      {/* ── Scroll indicator ── */}
+      <div
+        className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-3 rounded-full px-4 py-3"
+        style={{ background: "rgba(0,0,0,0.3)" }}
+      >
+        <span
+          className="font-sans font-medium uppercase text-white"
+          style={{ fontSize: "12px", letterSpacing: "3px" }}
+        >
           Scroll
         </span>
+
+        {/* Progress bar */}
+        <div
+          className="overflow-hidden rounded-sm"
+          style={{ width: "60px", height: "4px", background: "rgba(255,255,255,0.3)" }}
+        >
+          <div
+            className="h-full rounded-sm bg-[#7A8C3C] transition-all duration-700"
+            style={{ width: `${((current + 1) / slides.length) * 100}%` }}
+          />
+        </div>
+
+        {/* Bouncing arrow */}
         <a
           href="#stats"
           aria-label="Scroll down"
-          className="flex h-9 w-9 animate-bounce items-center justify-center rounded-full border border-white/30 text-white/50 transition-colors duration-200 hover:border-[#B5B847] hover:text-[#B5B847]"
+          className="flex animate-bounce items-center justify-center text-white transition-colors duration-300 hover:text-[#B5B847]"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="m6 9 6 6 6-6"/>
           </svg>
         </a>
