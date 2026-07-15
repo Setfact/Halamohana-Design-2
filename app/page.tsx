@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar"
 import HeroSection from "@/components/hero-section"
 import StatsSection from "@/components/stats-section"
 import AboutSection from "@/components/about-section"
+import PropertiesSection from "@/components/properties-section"
 
 export default function Page() {
   return (
@@ -10,9 +11,10 @@ export default function Page() {
       <HeroSection />
       <StatsSection />
       <AboutSection />
+      <PropertiesSection />
 
       {/* Filler sections to demonstrate sticky behavior on scroll */}
-      {(["Properties", "Gallery", "News", "Career", "Contact"] as const).map(
+      {(["Gallery", "News", "Career", "Contact"] as const).map(
         (section) => (
           <section
             key={section}
