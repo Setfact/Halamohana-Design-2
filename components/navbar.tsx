@@ -7,7 +7,7 @@ const navLinks = ["Home", "About", "Properties", "Gallery", "News", "Career"]
 const navHrefs: Record<string, string> = {
   Home: "/",
   About: "/about",
-  Properties: "/#properties",
+  Properties: "/properties",
   Gallery: "/#gallery",
   News: "/#news",
   Career: "/#career",
