@@ -124,18 +124,10 @@ export default function AboutSection() {
           >
             <div className="flex flex-col gap-5">
               <p className="font-sans text-base leading-relaxed text-[#6b6b55] text-pretty">
-                PT Halla Mohana was founded on the belief that genuine hospitality
-                is a form of art — one that requires patience, precision, and deep
-                respect for the people it serves. From our first property in
-                Indonesia to our growing presence across Southeast Asia, we have
-                remained committed to creating environments that feel both
-                exceptional and effortlessly human.
+                PT Halla Mohana develops and manages premium hospitality assets — from hotels to lifestyle destinations — built for the modern business traveller and urban dweller across Indonesia.
               </p>
               <p className="font-sans text-base leading-relaxed text-[#6b6b55] text-pretty">
-                We develop, manage, and operate hospitality assets that serve the
-                modern business traveller and lifestyle-conscious urban dweller —
-                places where comfort is never an afterthought and distinction is
-                built into every detail.
+                Every space we create reflects our commitment to genuine comfort, purposeful design, and lasting distinction.
               </p>
             </div>
 
@@ -169,10 +161,10 @@ export default function AboutSection() {
             {/* CTA */}
             <div>
               <a
-                href="#properties"
+                href="/about"
                 className="inline-flex items-center gap-2 rounded-sm bg-[#7A8C3C] px-7 py-3 font-sans text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-[#B5B847] active:scale-95"
               >
-                Explore Our Properties
+                About Us
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>

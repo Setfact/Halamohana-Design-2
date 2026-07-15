@@ -10,8 +10,8 @@ interface Stat {
 
 const stats: Stat[] = [
   { value: 15, suffix: "+", label: "Years of Excellence" },
-  { value: 10, suffix: "+", label: "Properties Managed" },
-  { value: 50, suffix: "K+", label: "Guests Annually" },
+  { value: 2,  suffix: "",  label: "Properties" },
+  { value: 50, suffix: "K+", label: "Guests Served" },
   { value: 2,  suffix: "",  label: "Strategic Locations" },
 ]
 

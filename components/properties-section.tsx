@@ -2,72 +2,32 @@
 
 import { useEffect, useRef, useState } from "react"
 
-type PropertyType = "Hotels" | "Malls" | "Resorts"
+type PropertyType = "Hotels" | "Malls"
 
 const properties = [
   {
     type: "Hotels" as PropertyType,
-    name: "Halla Mohana Hotel Jakarta",
-    location: "Jakarta, Indonesia",
-    description: "Premium business hotel in the heart of Jakarta",
+    name: "FOX Hotel Pekanbaru",
+    location: "Jl. Riau, Pekanbaru",
+    description: "A contemporary business hotel offering comfortable rooms and modern amenities in the heart of Pekanbaru.",
     image:
       "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imageAlt: "Luxury hotel lobby in Jakarta",
+    imageAlt: "FOX Hotel Pekanbaru lobby",
   },
   {
     type: "Malls" as PropertyType,
-    name: "Halla Mohana Mall Pekanbaru",
-    location: "Pekanbaru, Indonesia",
-    description: "Urban lifestyle destination for modern living",
+    name: "PekanbaruXchange",
+    location: "Jl. Riau, Pekanbaru",
+    description: "A premier lifestyle and retail destination anchoring the commercial heart of Pekanbaru's most vibrant district.",
     image:
       "https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imageAlt: "Modern shopping mall interior",
-  },
-  {
-    type: "Resorts" as PropertyType,
-    name: "Halla Mohana Resort Bandung",
-    location: "Bandung, Indonesia",
-    description: "Serene retreat surrounded by natural beauty",
-    image:
-      "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imageAlt: "Resort pool surrounded by nature in Bandung",
-  },
-  {
-    type: "Hotels" as PropertyType,
-    name: "Halla Mohana Hotel Surabaya",
-    location: "Surabaya, Indonesia",
-    description: "Modern comfort for the discerning traveler",
-    image:
-      "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imageAlt: "Elegant hotel room interior in Surabaya",
-  },
-  {
-    type: "Malls" as PropertyType,
-    name: "Halla Mohana Mall Medan",
-    location: "Medan, Indonesia",
-    description: "Premier retail and lifestyle hub",
-    image:
-      "https://images.pexels.com/photos/1005638/pexels-photo-1005638.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imageAlt: "Shopping mall retail area in Medan",
-  },
-  {
-    type: "Resorts" as PropertyType,
-    name: "Halla Mohana Resort Bali",
-    location: "Bali, Indonesia",
-    description: "Tropical luxury meets world-class wellness",
-    image:
-      "https://images.pexels.com/photos/1450363/pexels-photo-1450363.jpeg?auto=compress&cs=tinysrgb&w=800",
-    imageAlt: "Tropical resort spa in Bali",
+    imageAlt: "PekanbaruXchange shopping mall interior",
   },
 ]
-
-const tabs = ["All", "Hotels", "Malls", "Resorts"] as const
-type Tab = (typeof tabs)[number]
 
 const badgeColor: Record<PropertyType, string> = {
   Hotels: "bg-[#7A8C3C] text-white",
   Malls: "bg-[#B5B847] text-[#2A2E1F]",
-  Resorts: "bg-[#7A8C3C] text-white",
 }
 
 function useScrollReveal(threshold = 0.15) {
@@ -185,14 +145,9 @@ function PropertyCard({
 }
 
 export default function PropertiesSection() {
-  const [activeTab, setActiveTab] = useState<Tab>("All")
   const { ref: headerRef, visible: headerVisible } = useScrollReveal(0.2)
   const { ref: gridRef, visible: gridVisible } = useScrollReveal(0.1)
 
-  const filtered =
-    activeTab === "All"
-      ? properties
-      : properties.filter((p) => p.type === activeTab)
 
   return (
     <section
@@ -227,43 +182,12 @@ export default function PropertiesSection() {
           </p>
         </div>
 
-        {/* Filter tabs */}
-        <div
-          className="mb-10 flex justify-center transition-all duration-700 delay-100"
-          style={{
-            opacity: headerVisible ? 1 : 0,
-            transform: headerVisible ? "translateY(0)" : "translateY(12px)",
-          }}
-        >
-          <div
-            className="flex gap-1 rounded-full border border-[#dde0cc] bg-white p-1"
-            role="tablist"
-            aria-label="Filter properties by type"
-          >
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                role="tab"
-                aria-selected={activeTab === tab}
-                onClick={() => setActiveTab(tab)}
-                className={`rounded-full px-5 py-2 font-sans text-sm font-medium transition-all duration-200 ${
-                  activeTab === tab
-                    ? "bg-[#7A8C3C] text-white shadow-sm"
-                    : "text-[#5A6040] hover:text-[#2A2E1F]"
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* Property grid */}
         <div
           ref={gridRef}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid grid-cols-1 gap-6 sm:grid-cols-2"
         >
-          {filtered.map((property, i) => (
+          {properties.map((property, i) => (
             <PropertyCard
               key={property.name}
               property={property}
