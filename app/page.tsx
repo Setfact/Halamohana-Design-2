@@ -4,6 +4,7 @@ import StatsSection from "@/components/stats-section"
 import AboutSection from "@/components/about-section"
 import PropertiesSection from "@/components/properties-section"
 import CtaSection from "@/components/cta-section"
+import FooterSection from "@/components/footer-section"
 
 export default function Page() {
   return (
@@ -37,6 +38,8 @@ export default function Page() {
           </section>
         )
       )}
+
+      <FooterSection />
     </main>
   )
 }
