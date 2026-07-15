@@ -81,36 +81,6 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* ── Social icons — left, z5, centered vertically, not overlapping arrows ── */}
-      <div
-        className="absolute left-6 top-1/2 hidden -translate-y-1/2 flex-col items-center gap-4 md:flex"
-        style={{ zIndex: 5 }}
-      >
-        <span className="block h-12 w-px bg-white/20" />
-        <a
-          href="#"
-          aria-label="LinkedIn"
-          className="text-white/50 transition-all duration-300 hover:text-[#B5B847] hover:scale-110"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect width="4" height="12" x="2" y="9"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
-        </a>
-        <a
-          href="#"
-          aria-label="Instagram"
-          className="text-white/50 transition-all duration-300 hover:text-[#B5B847] hover:scale-110"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
-          </svg>
-        </a>
-        <span className="block h-12 w-px bg-white/20" />
-      </div>
 
       {/* ── Centered text — z5 ── */}
       <div
