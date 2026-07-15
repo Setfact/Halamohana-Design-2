@@ -44,24 +44,16 @@ export default function Navbar() {
         >
           {/* Logo */}
           <a
-            href="#"
-            className="flex flex-col leading-none group"
+            href="/"
+            className="flex items-center gap-3 group"
             aria-label="Halla Mohana — Home"
           >
-            <span
-              className={`font-serif text-xl font-semibold tracking-wide transition-colors duration-300 ${
-                scrolled ? "text-[#3a3a2e]" : "text-white"
-              } group-hover:text-[#7A8C3C]`}
-            >
-              Halla Mohana
-            </span>
-            <span
-              className={`font-sans text-[10px] tracking-[0.25em] uppercase transition-colors duration-300 ${
-                scrolled ? "text-[#7A8C3C]" : "text-white/70"
-              }`}
-            >
-              Hospitality Development
-            </span>
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo__1_-removebg-preview-AArstaIVTRIMHtMo2H0gojKK9LBla1.png"
+              alt="Halla Mohana"
+              style={{ height: "100px", width: "auto" }}
+              className="object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop nav */}

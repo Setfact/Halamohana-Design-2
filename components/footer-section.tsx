@@ -137,7 +137,8 @@ export default function FooterSection() {
             transition: "opacity 0.7s ease, transform 0.7s ease",
           }}
         >
-          <div className="mb-12 flex flex-col gap-3 border-b border-white/10 pb-10 md:flex-row md:items-start md:justify-between">
+          <div className="mb-12 flex flex-col gap-3 border-b border-white/10 pb-10 md:flex-row md:items-center md:justify-between">
+            {/* Brand text */}
             <div className="max-w-sm">
               <p className="font-sans text-xs tracking-[0.35em] uppercase text-[#7A8C3C] mb-1">
                 Hospitality Development
@@ -149,22 +150,32 @@ export default function FooterSection() {
                 Building premium spaces for business travelers and urban lifestyle across Indonesia.
               </p>
               <p className="mt-2 font-sans text-xs text-white/40 italic">
-                A subsidiary of TMT Group, managed by Mahadasha Group
+                A subsidiary of TMT Group
               </p>
+              {/* Social icons below brand text */}
+              <div className="mt-6 flex items-center gap-3">
+                {socialLinks.map(({ icon, label, href }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/70 transition-all duration-300 hover:border-[#B5B847] hover:text-[#B5B847] hover:scale-110"
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Social icons */}
-            <div className="flex items-center gap-3 md:mt-2">
-              {socialLinks.map(({ icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white/70 transition-all duration-300 hover:border-[#B5B847] hover:text-[#B5B847] hover:scale-110"
-                >
-                  {icon}
-                </a>
-              ))}
+            {/* Large decorative logo — right side */}
+            <div className="hidden md:flex items-center justify-center">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo__1_-removebg-preview-AArstaIVTRIMHtMo2H0gojKK9LBla1.png"
+                alt=""
+                aria-hidden="true"
+                style={{ height: "220px", width: "auto", opacity: 0.85 }}
+                className="object-contain transition-all duration-500 hover:opacity-100 hover:scale-105"
+              />
             </div>
           </div>
 
