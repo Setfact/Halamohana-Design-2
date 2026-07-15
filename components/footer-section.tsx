@@ -142,7 +142,7 @@ export default function FooterSection() {
               <img
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo__1_-removebg-preview-AArstaIVTRIMHtMo2H0gojKK9LBla1.png"
                 alt="Halla Mohana"
-                style={{ height: "70px", width: "auto" }}
+                style={{ height: "110px", width: "auto" }}
                 className="mb-4 object-contain transition-transform duration-300 hover:scale-105"
               />
               <p className="font-sans text-xs tracking-[0.35em] uppercase text-[#7A8C3C] mb-1">

@@ -51,7 +51,7 @@ export default function Navbar() {
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo__1_-removebg-preview-AArstaIVTRIMHtMo2H0gojKK9LBla1.png"
               alt="Halla Mohana"
-              style={{ height: "50px", width: "auto" }}
+              style={{ height: "80px", width: "auto" }}
               className="object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
