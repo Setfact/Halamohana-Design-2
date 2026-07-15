@@ -10,7 +10,7 @@ const navHrefs: Record<string, string> = {
   Properties: "/properties",
   Gallery: "/gallery",
   News: "/news",
-  Career: "/#career",
+  Career: "/career",
 }
 
 export default function Navbar() {
