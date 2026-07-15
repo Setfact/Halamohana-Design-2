@@ -3,6 +3,7 @@ import HeroSection from "@/components/hero-section"
 import StatsSection from "@/components/stats-section"
 import AboutSection from "@/components/about-section"
 import PropertiesSection from "@/components/properties-section"
+import CtaSection from "@/components/cta-section"
 
 export default function Page() {
   return (
@@ -12,9 +13,10 @@ export default function Page() {
       <StatsSection />
       <AboutSection />
       <PropertiesSection />
+      <CtaSection />
 
       {/* Filler sections to demonstrate sticky behavior on scroll */}
-      {(["Gallery", "News", "Career", "Contact"] as const).map(
+      {(["Gallery", "News", "Career"] as const).map(
         (section) => (
           <section
             key={section}
