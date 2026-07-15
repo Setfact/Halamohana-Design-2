@@ -2,24 +2,33 @@
 
 import { useEffect, useRef, useState } from "react"
 
-const pillars = [
+const values = [
   {
-    number: "01",
     title: "Hospitality First",
-    description:
-      "Every space we develop is anchored by genuine care — for guests, for communities, and for the environments we inhabit.",
+    description: "Genuine care for guests, communities, and every space we inhabit.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    ),
   },
   {
-    number: "02",
     title: "Design with Purpose",
-    description:
-      "Architecture and interiors are crafted to evoke calm confidence, blending local character with international standards.",
+    description: "Architecture crafted to blend local character with international standards.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+      </svg>
+    ),
   },
   {
-    number: "03",
     title: "Sustainable Growth",
-    description:
-      "We build for the long term, integrating responsible practices that honour both culture and ecology.",
+    description: "Building for the long term with responsible and culturally-aware practices.",
+    icon: (
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 22V12"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M8 6.8A9.98 9.98 0 0 1 12 2c1.87 0 3.61.52 5.09 1.41"/><path d="M8 6.8C9.14 5.08 10.47 4 12 4s2.86 1.08 4 2.8"/>
+      </svg>
+    ),
   },
 ]
 
@@ -124,44 +133,34 @@ export default function AboutSection() {
           >
             <div className="flex flex-col gap-5">
               <p className="font-sans text-base leading-relaxed text-[#6b6b55] text-pretty">
-                PT Halla Mohana was founded on the belief that genuine hospitality
-                is a form of art — one that requires patience, precision, and deep
-                respect for the people it serves. From our first property in
-                Indonesia to our growing presence across Southeast Asia, we have
-                remained committed to creating environments that feel both
-                exceptional and effortlessly human.
+                PT Halla Mohana develops and manages premium hospitality assets — from hotels to lifestyle destinations — built for the modern business traveller and urban dweller across Indonesia.
               </p>
               <p className="font-sans text-base leading-relaxed text-[#6b6b55] text-pretty">
-                We develop, manage, and operate hospitality assets that serve the
-                modern business traveller and lifestyle-conscious urban dweller —
-                places where comfort is never an afterthought and distinction is
-                built into every detail.
+                Every space we create reflects our commitment to genuine comfort, purposeful design, and lasting distinction.
               </p>
             </div>
 
-            {/* Pillars */}
-            <div className="flex flex-col gap-6 border-t border-[#dde0cc] pt-8">
-              {pillars.map((pillar, i) => (
+            {/* Value icon cards */}
+            <div className="grid grid-cols-3 gap-4 border-t border-[#dde0cc] pt-8">
+              {values.map((value, i) => (
                 <div
-                  key={pillar.number}
-                  className="flex gap-5 transition-all duration-500"
+                  key={value.title}
+                  className="flex flex-col items-center gap-3 rounded-xl bg-white p-4 text-center shadow-sm transition-all duration-500"
                   style={{
                     opacity: copyVisible ? 1 : 0,
-                    transform: copyVisible ? "translateY(0)" : "translateY(12px)",
+                    transform: copyVisible ? "translateY(0)" : "translateY(16px)",
                     transitionDelay: `${200 + i * 100}ms`,
                   }}
                 >
-                  <span className="mt-0.5 font-serif text-sm font-semibold text-[#B5B847] shrink-0">
-                    {pillar.number}
+                  <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F0F2E6] text-[#7A8C3C]">
+                    {value.icon}
                   </span>
-                  <div>
-                    <p className="font-sans text-sm font-semibold text-[#2A2E1F]">
-                      {pillar.title}
-                    </p>
-                    <p className="mt-1 font-sans text-sm leading-relaxed text-[#6b6b55]">
-                      {pillar.description}
-                    </p>
-                  </div>
+                  <p className="font-sans text-xs font-semibold leading-snug text-[#2A2E1F]">
+                    {value.title}
+                  </p>
+                  <p className="font-sans text-[11px] leading-relaxed text-[#8a8e72]">
+                    {value.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -169,10 +168,10 @@ export default function AboutSection() {
             {/* CTA */}
             <div>
               <a
-                href="#properties"
+                href="/about"
                 className="inline-flex items-center gap-2 rounded-sm bg-[#7A8C3C] px-7 py-3 font-sans text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-[#B5B847] active:scale-95"
               >
-                Explore Our Properties
+                About Us
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>

@@ -4,6 +4,15 @@ import { useState, useEffect } from "react"
 
 const navLinks = ["Home", "About", "Properties", "Gallery", "News", "Career"]
 
+const navHrefs: Record<string, string> = {
+  Home: "/",
+  About: "/about",
+  Properties: "/properties",
+  Gallery: "/gallery",
+  News: "/news",
+  Career: "/career",
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -60,7 +69,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <a
                 key={link}
-                href={`#${link.toLowerCase()}`}
+                href={navHrefs[link] ?? `/#${link.toLowerCase()}`}
                 className={`relative px-3 py-2 font-sans text-sm font-medium tracking-wide transition-colors duration-200 after:absolute after:bottom-0 after:left-3 after:right-3 after:h-[1.5px] after:scale-x-0 after:rounded-full after:bg-[#B5B847] after:transition-transform after:duration-200 hover:text-[#B5B847] hover:after:scale-x-100 ${
                   scrolled ? "text-[#3a3a2e]" : "text-white/90"
                 }`}
@@ -71,7 +80,7 @@ export default function Navbar() {
 
             {/* Contact Us CTA */}
             <a
-              href="#contact"
+              href="/contact"
               className="ml-4 rounded-sm bg-[#7A8C3C] px-5 py-2 font-sans text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-[#B5B847] hover:shadow-md active:scale-95"
             >
               Contact Us
@@ -134,7 +143,7 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li key={link}>
                 <a
-                  href={`#${link.toLowerCase()}`}
+                  href={navHrefs[link] ?? `/#${link.toLowerCase()}`}
                   className="block py-3 font-sans text-base font-medium text-[#3a3a2e] tracking-wide border-b border-[#e8ead8] transition-colors duration-150 hover:text-[#B5B847] hover:pl-2"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -145,7 +154,7 @@ export default function Navbar() {
           </ul>
 
           <a
-            href="#contact"
+            href="/contact"
             className="mt-8 rounded-sm bg-[#7A8C3C] px-6 py-3 text-center font-sans text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-[#B5B847]"
             onClick={() => setMobileOpen(false)}
           >

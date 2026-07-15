@@ -7,10 +7,10 @@ const propertyLinks = ["Hotels", "Malls", "Resorts", "All Properties", "Partners
 const companyLinks = ["Careers", "Contact Us", "Privacy Policy", "Terms of Service", "Sitemap"]
 
 const contactItems = [
-  { icon: "location", label: "Head Office: Jakarta, Indonesia" },
-  { icon: "location", label: "Site Office: Pekanbaru, Indonesia" },
+  { icon: "location", label: "Head Office: Jl. Jend. Sudirman Kav. 52-53, SCBD Lot 19, Jakarta Selatan 12190" },
+  { icon: "location", label: "Site Office: Jl. Riau No. 9, Pekanbaru, Riau 28292" },
+  { icon: "phone", label: "+62 21 2997 6700" },
   { icon: "email", label: "info@hallamohana.co.id" },
-  { icon: "phone", label: "+62 XXX-XXXX-XXXX" },
   { icon: "web", label: "hallamohana.co.id" },
 ]
 
