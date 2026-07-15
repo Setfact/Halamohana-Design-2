@@ -4,20 +4,14 @@ import { useState, useEffect, useRef } from "react"
 
 const slides = [
   {
-    videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4185227-hd_1920_1080_25fps-NzswSs3FGe8NDQdJgxEVCzFd2wosgl.mp4",
-    poster: "",
-    label: "Indonesia",
-  },
-  {
     // Pexels free-use luxury hotel lobby / atrium
     videoSrc: "https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_25fps.mp4",
     poster: "https://images.pexels.com/videos/3571264/pictures/preview-0.jpg",
     label: "Kuala Lumpur",
   },
   {
-    // Pexels free-use rooftop pool at sunset
-    videoSrc: "https://videos.pexels.com/video-files/2795405/2795405-uhd_2560_1440_30fps.mp4",
-    poster: "https://images.pexels.com/videos/2795405/pictures/preview-0.jpg",
+    videoSrc: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4185227-hd_1920_1080_25fps-NzswSs3FGe8NDQdJgxEVCzFd2wosgl.mp4",
+    poster: "",
     label: "Jakarta",
   },
   {
