@@ -80,7 +80,7 @@ export default function Navbar() {
 
             {/* Contact Us CTA */}
             <a
-              href="#contact"
+              href="/contact"
               className="ml-4 rounded-sm bg-[#7A8C3C] px-5 py-2 font-sans text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-[#B5B847] hover:shadow-md active:scale-95"
             >
               Contact Us
@@ -154,7 +154,7 @@ export default function Navbar() {
           </ul>
 
           <a
-            href="#contact"
+            href="/contact"
             className="mt-8 rounded-sm bg-[#7A8C3C] px-6 py-3 text-center font-sans text-sm font-medium tracking-wide text-white transition-all duration-200 hover:bg-[#B5B847]"
             onClick={() => setMobileOpen(false)}
           >
