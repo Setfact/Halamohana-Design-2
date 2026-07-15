@@ -139,22 +139,12 @@ export default function FooterSection() {
         >
           <div className="mb-12 flex flex-col gap-3 border-b border-white/10 pb-10 md:flex-row md:items-start md:justify-between">
             <div className="max-w-sm">
-              <div
-                className="mb-5 flex items-center justify-center rounded-full bg-white transition-transform duration-300 hover:scale-105"
-                style={{
-                  width: "80px",
-                  height: "80px",
-                  border: "2px solid rgba(122,140,60,0.3)",
-                  padding: "8px",
-                  boxShadow: "0 2px 16px rgba(0,0,0,0.4)",
-                }}
-              >
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
-                  alt="Halla Mohana logo"
-                  className="h-full w-full object-contain"
-                />
-              </div>
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo__1_-removebg-preview-AArstaIVTRIMHtMo2H0gojKK9LBla1.png"
+                alt="Halla Mohana"
+                style={{ height: "70px", width: "auto" }}
+                className="mb-4 object-contain transition-transform duration-300 hover:scale-105"
+              />
               <p className="font-sans text-xs tracking-[0.35em] uppercase text-[#7A8C3C] mb-1">
                 Hospitality Development
               </p>

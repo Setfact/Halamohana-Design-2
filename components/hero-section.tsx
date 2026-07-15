@@ -87,34 +87,6 @@ export default function HeroSection() {
         className="absolute inset-0 flex flex-col items-center justify-center px-24 text-center"
         style={{ zIndex: 5 }}
       >
-        {/* Logo */}
-          <div
-            className="mb-6 flex items-center justify-center rounded-full bg-white"
-            style={{
-              width: "120px",
-              height: "120px",
-              border: "2px solid rgba(122,140,60,0.3)",
-              padding: "12px",
-              boxShadow: "0 0 30px rgba(122,140,60,0.3), 0 4px 20px rgba(0,0,0,0.3)",
-              opacity: loaded ? 1 : 0,
-              transform: loaded ? "translateY(0) scale(1)" : "translateY(-10px) scale(0.9)",
-              transition: "opacity 0.7s ease 0s, transform 0.7s ease 0s",
-              animation: loaded ? "logoPulse 3s ease-in-out infinite" : "none",
-            }}
-          >
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
-              alt="Halla Mohana logo"
-              className="h-full w-full object-contain"
-            />
-          </div>
-          <style>{`
-            @keyframes logoPulse {
-              0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(122,140,60,0.3), 0 4px 20px rgba(0,0,0,0.3); }
-              50% { transform: scale(1.04); box-shadow: 0 0 45px rgba(122,140,60,0.5), 0 4px 24px rgba(0,0,0,0.35); }
-            }
-          `}</style>
-
         {/* Top label */}
           <p
             className="font-sans text-[11px] font-medium tracking-[0.45em] uppercase text-[#B5B847] mb-5"

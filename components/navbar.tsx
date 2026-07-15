@@ -48,20 +48,12 @@ export default function Navbar() {
             className="flex items-center gap-3 group"
             aria-label="Halla Mohana — Home"
           >
-            <div
-              className="flex h-[50px] w-[50px] shrink-0 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:scale-105"
-              style={{
-                border: "2px solid rgba(122,140,60,0.3)",
-                boxShadow: "0 2px 12px rgba(0,0,0,0.15)",
-                padding: "6px",
-              }}
-            >
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20%281%29-FjjaJkB3gWSasnXq8EdrmCwfzN8R1f.png"
-                alt="Halla Mohana logo"
-                className="h-full w-full object-contain"
-              />
-            </div>
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo__1_-removebg-preview-AArstaIVTRIMHtMo2H0gojKK9LBla1.png"
+              alt="Halla Mohana"
+              style={{ height: "50px", width: "auto" }}
+              className="object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </a>
 
           {/* Desktop nav */}
