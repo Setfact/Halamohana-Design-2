@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from "react"
 
 const partners = [
-  { name: "TMT Group", subtitle: "Parent Company" },
-  { name: "Mahadasha Group", subtitle: "Management Partner" },
-  { name: "FOX Hotels", subtitle: "Brand Partner" },
+  { name: "Logo TMT Group", subtitle: "Parent Company", logoUrl: "" },
+  { name: "Logo Mahadasha Group", subtitle: "Management Partner", logoUrl: "" },
+  { name: "Logo FOX Hotels", subtitle: "Brand Partner", logoUrl: "" },
 ]
 
 export default function PartnersSection() {
@@ -67,10 +67,18 @@ export default function PartnersSection() {
               }}
             >
               {/* Logo pill — grayscale by default, color on hover */}
-              <div className="flex h-16 min-w-[160px] items-center justify-center rounded-lg border border-[#e8ead8] bg-[#F8F9F4] px-8 py-4 grayscale transition-all duration-300 hover:grayscale-0 hover:border-[#7A8C3C] hover:bg-white hover:shadow-md">
-                <span className="font-serif text-xl font-semibold text-[#2A2E1F] leading-none transition-colors duration-300 group-hover:text-[#7A8C3C]">
-                  {partner.name}
-                </span>
+              <div className="flex h-16 min-w-[180px] items-center justify-center rounded-lg border border-[#e8ead8] bg-[#F8F9F4] px-8 py-4 grayscale transition-all duration-300 hover:grayscale-0 hover:border-[#7A8C3C] hover:bg-white hover:shadow-md">
+                {partner.logoUrl ? (
+                  <img
+                    src={partner.logoUrl}
+                    alt={partner.name}
+                    className="max-h-10 max-w-full object-contain"
+                  />
+                ) : (
+                  <span className="font-serif text-lg md:text-xl font-semibold text-[#2A2E1F] leading-none transition-colors duration-300 group-hover:text-[#7A8C3C] whitespace-nowrap">
+                    {partner.name}
+                  </span>
+                )}
               </div>
               <span className="font-sans text-[10px] uppercase tracking-widest text-[#9a9e84]">
                 {partner.subtitle}
